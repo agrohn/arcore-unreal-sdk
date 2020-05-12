@@ -47,7 +47,7 @@ public:
 private:
 	void RenderPointCloud();
 
-	TSharedPtr<FARSystemBase, ESPMode::ThreadSafe> ARSystem;
+	TSharedPtr<IXRTrackingSystem, ESPMode::ThreadSafe> ARSystem;
 	
 	
 };

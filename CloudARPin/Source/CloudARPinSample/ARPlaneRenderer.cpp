@@ -85,13 +85,13 @@ void AARPlaneRenderer::UpdatePlane(UARPlaneGeometry* ARCorePlaneObject)
 	if(ARCorePlaneObject->GetTrackingState() == EARTrackingState::Tracking &&
 	   ARCorePlaneObject->GetSubsumedBy() == nullptr)
 	{
-		if (!PlanePolygonMeshComponent->bVisible)
+		if (!PlanePolygonMeshComponent->GetVisibleFlag())
 		{
 			PlanePolygonMeshComponent->SetVisibility(true, true);
 		}
 		UpdatePlaneMesh(ARCorePlaneObject, PlanePolygonMeshComponent);
 	}
-	else if (PlanePolygonMeshComponent->bVisible)
+	else if (PlanePolygonMeshComponent->GetVisibleFlag())
 	{
 		PlanePolygonMeshComponent->SetVisibility(false, true);
 	}

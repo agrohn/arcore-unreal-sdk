@@ -52,7 +52,7 @@ void AARPointCloudRenderer::RenderPointCloud()
 	UWorld* World = GetWorld();
 	if (!ARSystem.IsValid())
 	{
-		ARSystem = StaticCastSharedPtr<FARSystemBase>(GEngine->XRSystem);
+		ARSystem = StaticCastSharedPtr<IXRTrackingSystem>(GEngine->XRSystem);
 	}
 
 	if (UARBlueprintLibrary::GetTrackingQuality() == EARTrackingQuality::OrientationAndPosition)
